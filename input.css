@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.filters__img {
+    width: 261px;
+    height: 261px;
+    overflow: hidden;
+}
+
+.filters__img img {
+    width: 100%;
+    height: 100%;
+}

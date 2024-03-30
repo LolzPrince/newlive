@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header class="bg-white sticky top-0 z-50">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+            <a href="index.html" class="-m-1.5 p-1.5">
+                <span class="sr-only">Новая жизнь</span>
+                <img class="h-8 w-auto" src="./media/logo.png" alt="">
+            </a>
+        </div>
+        <div class="flex lg:hidden">
+            <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+            <a href="search.html" class="text-sm font-semibold leading-6 text-gray-900">Поиск</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Добавить</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Отзывы</a>
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Войти <span aria-hidden="true">&rarr;</span></a>
+        </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div class="lg:hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-10"></div>
+        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Новая жизнь</span>
+                    <img class="h-8 w-auto" src="./media/logo.png" alt="">
+                </a>
+                <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                        <a href="search.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Поиск</a>
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Добавить</a>
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Отзывы</a>
+                    </div>
+                    <div class="py-6">
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Войти</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="bg-white mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:text-center">
+        <p class="mt-2 text-3xl font-bold tracking-tight lg:text-center text-gray-900 sm:text-4xl">Поиск Питомца</p>
+    </div>
+    <form class="flex flex-col w-full max-w-2xl mx-auto mt-6">
+        <div class="flex justify-between mt-4">
+            <div class="mr-2 flex-1">
+                <input type="text" id="searchText" placeholder="Введите текст для поиска" class="border border-gray-300 rounded-md p-2 mt-1 w-full">
+            </div>
+            <div class="">
+                <button type="submit" class="border border-bg-indigo-600 bg-indigo-600 text-white font-semibold rounded-md p-2 hover:bg-indigo-700 active:bg-indigo-800 mt-1 transition-colors mx-auto">Поиск питомца</button>
+            </div>
+        </div>
+        <div class="flex justify-between mt-4">
+            <div class="w-1/2 mr-2">
+                <input type="text" id="district" placeholder="Введите район" class="border border-gray-300 rounded-md p-2 mt-1 w-full">
+            </div>
+            <div class="w-1/2">
+                <select id="animal" class="border border-gray-300 rounded-md p-2 mt-1 w-full">
+                    <option value="" selected>Выберите вид животного</option>
+                    <option value="dog">Собака</option>
+                    <option value="cat">Кошка</option>
+                    <option value="bird">Птица</option>
+                    <option value="rabbit">Кролик</option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <div class="mx-auto max-w-2xl mt-12 lg:max-w-4xl">
+        <div class="mx-auto max-w-2xl mt-12 lg:max-w-4xl">
+            <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 sm:gap-x-6 xl:gap-x-8 w-full">
+                    <a href="#" class="group">
+                        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 filters__img">
+                            <img src="./media/animals/dog1.jpg" alt="dog" class="h-full w-full object-cover object-center group-hover:opacity-75">
+                        </div>
+                        <h3 class="mt-4 text-sm text-gray-700">Пес Альберт</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-900">р-н Завьяловский</p>
+                    </a>
+                    <a href="#" class="group">
+                        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 filters__img">
+                            <img src="./media/animals/dog2.jpg" alt="dog" class="h-full w-full object-cover object-center group-hover:opacity-75">
+                        </div>
+                        <h3 class="mt-4 text-sm text-gray-700">Пес Аркадий</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-900">р-н Завьяловский</p>
+                    </a>
+                    <a href="#" class="group">
+                        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 filters__img">
+                            <img src="./media/animals/cat1.jpg" alt="cat" class="h-full w-full object-cover object-center group-hover:opacity-75">
+                        </div>
+                        <h3 class="mt-4 text-sm text-gray-700">Кот Василий</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-900">р-н Завьяловский</p>
+                    </a>
+                    <a href="#" class="group">
+                        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7 filters__img">
+                            <img src="./media/animals/cat2.jpg" alt="cat" class="h-full w-full object-cover object-center group-hover:opacity-75">
+                        </div>
+                        <h3 class="mt-4 text-sm text-gray-700">Кот Георгий</h3>
+                        <p class="mt-1 text-lg font-medium text-gray-900">р-н Завьяловский</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
