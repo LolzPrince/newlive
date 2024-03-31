@@ -6,7 +6,9 @@
     height: 261px;
     overflow: hidden;
 }
-
+.text__w{
+    width: 261px;
+}
 .filters__img img {
     width: 100%;
     height: 100%;
